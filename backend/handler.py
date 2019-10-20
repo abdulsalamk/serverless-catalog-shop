@@ -29,7 +29,8 @@ def get_items(event, context):
     # Fetch image for each item.
     for item in items:
         #image_link = GCS.cse().list(q=item['name'], cx=os.getenv('GOOGLE_CX'), num=5).execute()['items'][0]['pagemap']['cse_image'][0]['src']
-        item['link'] = "https://images-na.ssl-images-amazon.com/images/I/61mcoYG4WTL._AC_SL1000_.jpg"
+        # item['link'] = "https://images-na.ssl-images-amazon.com/images/I/61mcoYG4WTL._AC_SL1000_.jpg"
+        item['link'] = item['image_url']
 
     return {
         'statusCode': 200,
