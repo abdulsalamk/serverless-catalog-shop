@@ -12,6 +12,8 @@
     "serverless-python-requirements": "^4.3.0"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "react": "^16.10.2",
     "serverless-dotenv-plugin": "^2.0.1",
     "serverless-plugin-epsagon": "^1.4.12",
     "serverless-pseudo-parameters": "^2.4.0"

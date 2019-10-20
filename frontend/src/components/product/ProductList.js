@@ -61,7 +61,8 @@ class ProductList extends Component {
     }
   }
   componentDidMount() {
-    fetch('https://aj6vbw5suc.execute-api.eu-west-1.amazonaws.com/dev/items')
+    // fetch('https://aj6vbw5suc.execute-api.eu-west-1.amazonaws.com/dev/items')
+    fetch('https://2yk3rknfyb.execute-api.eu-west-2.amazonaws.com/dev/items')
       .then(res => res.json())
       .then(products => {
         this.setState({ products, isLoading: false })

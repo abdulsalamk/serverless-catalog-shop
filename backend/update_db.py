@@ -5,7 +5,7 @@ Main handler for catalog shop
 import sys
 import boto3
 
-DYNAMODB_CLIENT = boto3.resource('dynamodb', region_name='eu-west-1')
+DYNAMODB_CLIENT = boto3.resource('dynamodb', region_name='eu-west-2')
 CATALOG_TABLE = DYNAMODB_CLIENT.Table('CatalogTable')
 
 
@@ -40,7 +40,7 @@ CATALOG_ITEMS = [
         'price': 123,
         'rating': 3,
         'stock_left': 1,
-        'description': 'The all-new Echo Show features a new look, a vibrant 10.1” HD screen, built-in smart home hub, and improved speakers. Just ask Alexa to show you a recipe, watch live TV and sports with Hulu, make video calls, or see who’s at the front door.',
+        'description': 'The all-new Echo Show features a new look, a vibrant 10.1" HD screen, built-in smart home hub, and improved speakers. Just ask Alexa to show you a recipe, watch live TV and sports with Hulu, make video calls, or see whos at the front door.',
     },
     {
         'item_id': 1004,
@@ -56,7 +56,7 @@ CATALOG_ITEMS = [
         'price': 123,
         'rating': 3,
         'stock_left': 1,
-        'description': 'Introducing a hands-free, voice-controlled speaker with Alexa, designed with kids in mind. Echo Dot Kids Edition can play age-appropriate music, answer questions, tell stories, control compatible smart home devices, and more. Includes a black Echo Dot, a 1-year subscription to FreeTime Unlimited, a fun kid-friendly case, and a 2-year worry-free guarantee. If they break it, return it and we’ll replace it for free',
+        'description': 'Introducing a hands-free, voice-controlled speaker with Alexa, designed with kids in mind. Echo Dot Kids Edition can play age-appropriate music, answer questions, tell stories, control compatible smart home devices, and more. Includes a black Echo Dot, a 1-year subscription to FreeTime Unlimited, a fun kid-friendly case, and a 2-year worry-free guarantee. If they break it, return it and we will replace it for free',
     },
     {
         'item_id': 1006,
@@ -72,7 +72,7 @@ CATALOG_ITEMS = [
         'price': 123,
         'rating': 3,
         'stock_left': 1,
-        'description': """No more soggy pages with the Kindle Oasis—it's IPX8 rated to protect against immersion in up to two meters of fresh water for up to 60 minutes. And it's built to withstand getting splashed at the beach or dropped in the bathtub, hot tub, or pool. """,
+        'description': "No more soggy pages with the Kindle Oasis its IPX8 rated to protect against immersion in up to two meters of fresh water for up to 60 minutes. And it is built to withstand getting splashed at the beach or dropped in the bathtub, hot tub, or pool. ",
     },
     {
         'item_id': 1008,
@@ -80,7 +80,7 @@ CATALOG_ITEMS = [
         'price': 123,
         'rating': 3,
         'stock_left': 1,
-        'description': 'Fire HD 10 features a brilliant 10.1” 1080p Full HD display (1920 x 1200) with over 2 million pixels (224 ppi). Enjoy widescreen movies, videos, and games with wide viewing angles, less glare, and more brightness thanks to a stunning IPS (in-plane-switching) LCD display',
+        'description': 'Fire HD 10 features a brilliant 10.1 1080p Full HD display (1920 x 1200) with over 2 million pixels (224 ppi). Enjoy widescreen movies, videos, and games with wide viewing angles, less glare, and more brightness thanks to a stunning IPS (in-plane-switching) LCD display',
     },
     {
         'item_id': 1009,
@@ -96,7 +96,7 @@ CATALOG_ITEMS = [
         'price': 123,
         'rating': 3,
         'stock_left': 1,
-        'description': 'Fire TV Cube is the first hands-free streaming media player with Alexa, delivering an all-in-one entertainment experience. From across the room just say, “Alexa, play Billions” and Fire TV Cube turns on your TV and starts playing the SHOWTIME drama, allowing you to control your entertainment with voice commands. Watch as thousands of movies and TV episodes come to life with vibrant colors and detailed contrast in 4K Ultra HD and HDR',
+        'description': 'Fire TV Cube is the first hands-free streaming media player with Alexa, delivering an all-in-one entertainment experience. From across the room just say, Alexa, play Billions and Fire TV Cube turns on your TV and starts playing the SHOWTIME drama, allowing you to control your entertainment with voice commands. Watch as thousands of movies and TV episodes come to life with vibrant colors and detailed contrast in 4K Ultra HD and HDR',
     },
     {
         'item_id': 1011,
@@ -128,7 +128,7 @@ CATALOG_ITEMS = [
         'price': 123,
         'rating': 3,
         'stock_left': 1,
-        'description': 'Amazon Cloud Cam features everything you need to help keep your home safe. When Cloud Cam sees any activity you’ll receive a notification, allowing you to keep tabs on your home from anywhere. Our always-ready motion detection feature helps to capture activities right from the start',
+        'description': 'Amazon Cloud Cam features everything you need to help keep your home safe. When Cloud Cam sees any activity you will receive a notification, allowing you to keep tabs on your home from anywhere. Our always-ready motion detection feature helps to capture activities right from the start',
     },
     {
         'item_id': 1015,
@@ -150,11 +150,11 @@ CATALOG_ITEMS = [
 
 if __name__ == '__main__':
     # Clean old
-    results = CATALOG_TABLE.scan()
-    for item in results['Items']:
-        CATALOG_TABLE.delete_item(
-            Key={'item_id': item['item_id']}
-        )
+    # results = CATALOG_TABLE.scan()
+    # for item in results['Items']:
+    #     CATALOG_TABLE.delete_item(
+    #         Key={'item_id': item['item_id']}
+    #     )
 
     # Add new
     for i in range(int(sys.argv[1])):

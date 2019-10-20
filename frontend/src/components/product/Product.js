@@ -37,7 +37,7 @@ class Product extends Component {
   }
 
   componentDidMount() {
-    fetch('https://aj6vbw5suc.execute-api.eu-west-1.amazonaws.com/dev/items')
+    fetch('https://2yk3rknfyb.execute-api.eu-west-2.amazonaws.com/dev/items')
       .then(res => res.json())
       .then(product => {
         console.log(this.props.product.item_id)
